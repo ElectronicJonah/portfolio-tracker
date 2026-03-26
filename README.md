@@ -18,7 +18,7 @@ python main.py
 - View portfolio table with current prices, transaction value, current value and gain/loss
 - Plot historical price charts for individual or all tickers
 - View portfolio weights broken down by asset and by sector/asset class
-- Run a Monte Carlo simulation over 15 years with 10,000 simulated paths
+- Run a Monte Carlo simulation over 15 years with 100,000 simulated paths
 
 ## Usage
 
