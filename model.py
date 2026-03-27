@@ -96,6 +96,16 @@ def calculate_asset_class_weights(portfolio): # exact same logic as above
 
     return {asset_class: value / total_current_value for asset_class, value in asset_class_values.items()}
 
+
+def calculate_sharpe_ratio(portfolio, risk_free_rate=0.03, period="5y"): # 2-y Bund yield
+    mu, sigma = estimate_portfolio_parameters(portfolio, period)
+
+    trading_days = 252
+    annual_return = mu * trading_days
+    annual_volatility = sigma * np.sqrt(trading_days)
+
+    return (annual_return - risk_free_rate) / annual_volatility
+
 # Simulation
 def estimate_portfolio_parameters(portfolio, period="5y"):
     weights = calculate_portfolio_weights(portfolio)

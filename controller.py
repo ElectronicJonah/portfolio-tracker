@@ -43,6 +43,7 @@ def show_portfolio(portfolio):
     view.display_portfolio(table, total_current_value, total_invested, weights) # assemble data -> displayed by view
 
 def run():
+    print("hello")
     while True:
         print("\n0. Load test portfolio")
         print("1. Add asset")
@@ -85,6 +86,9 @@ def run():
                 sector_weights = model.calculate_sector_weights(portfolio)
                 class_weights = model.calculate_asset_class_weights(portfolio)
                 view.display_weights_breakdown(sector_weights, class_weights)
+                sharpe = model.calculate_sharpe_ratio(portfolio)
+                print("DEBUG:", sharpe)
+                view.display_sharpe_ratio(sharpe)
         elif choice == "5":
             if not portfolio:
                 print("Portfolio is empty!")

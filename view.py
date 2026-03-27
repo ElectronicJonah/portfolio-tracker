@@ -91,3 +91,13 @@ def plot_single_ticker(ticker, period="6mo"):
     plt.grid(True)
     plt.tight_layout()
     plt.show()
+
+
+def display_sharpe_ratio(sharpe):
+    print(f"\nSharpe Ratio: {sharpe:.2f}")
+    if sharpe > 1:
+        print("Good risk-adjusted return (> 1)")
+    elif sharpe > 0.5:
+        print("Acceptable risk-adjusted return (0.5–1)")
+    else:
+        print("Poor risk-adjusted return (< 0.5)")
