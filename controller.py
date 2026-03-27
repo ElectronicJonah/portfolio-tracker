@@ -87,7 +87,6 @@ def run():
                 class_weights = model.calculate_asset_class_weights(portfolio)
                 view.display_weights_breakdown(sector_weights, class_weights)
                 sharpe = model.calculate_sharpe_ratio(portfolio)
-                print("DEBUG:", sharpe)
                 view.display_sharpe_ratio(sharpe)
         elif choice == "5":
             if not portfolio:
